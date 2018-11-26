@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+	<div class="topBar">
+		<center>
+			<span id="title">Social Media<span>
+		</center>
+	</div>
+	<div>
+		<center>
+			<button id="loginBtn">Login</button> <button id="signUpBtn">SignUp</button>
+		</center>
+	</div>
+	<div id="loginForm">
+		<center>
+			<input type="text" name="email" id="userEmail" placeholder="Email"> <br></br>
+			<input type="password" name="email" id="userPassword" placeholder="Password"> <br></br>
+			<button id="finalLoginBtn">LOGIN!</button>
+		</center>
+	</div>
+	<div>
+		<center><div id="failAttempt"> Too many attempts...</div></center>
+	</div>
+	<div id="signUpForm">
+		<center>
+		<form id="myForm">
+			<input type="text" name="fName" id="fName" placeholder="First Name"><br></br>
+			<input type="text" name="lName" id="lName" placeholder="Last Name"><br></br>
+			<input type="text" name="email" id="email" placeholder="Email"><br></br>
+			<input type="password" name="password" id="password" placeholder="Password"><br></br>
+			<input type="password" name="conPassword" id="confirmPassword" placeholder="Confirm Password"><br></br>
+		</form>
+			<button id="finalSignUpBtn">SIGNUP!</button>
+			<div id="message">
+				<span>Congradulation! You have successfully signed up!</span>
+			</div>
+		</center>
+	</div>
+
+
+
+	<script type="text/javascript">
+		// the forms of div
+		var loginForm = document.getElementById("loginForm");
+		var signUpForm = document.getElementById("signUpForm");
+		// the buttons
+		var loginBtn = document.getElementById("loginBtn");
+		var signUpBtn = document.getElementById("signUpBtn");
+		var finalSignUpBtn = document.getElementById("finalSignUpBtn");
+		var finalLoginBtn = document.getElementById("finalLoginBtn");
+		// Signup information
+		var form = document.getElementById("myForm");
+		var fName = document.getElementById("fName");
+		var lName = document.getElementById("lName");
+		var email = document.getElementById("email");
+		var password = document.getElementById("password"); 
+		var confirmPassword = document.getElementById("confirmPassword");
+		// signup bookleans
+		var isF = false;
+		var isL = false;
+		var isE = false;
+		var isP = false;
+		var isCP = false;
+		// login information
+		var userEmail = document.getElementById("userEmail");
+		var userPassword = document.getElementById("userPassword");
+		// storage information to match wtih user's input
+		var realEmail;
+		var realPass;
+		// message to display when the user successfully sign up and fail attemps
+		var message = document.getElementById("message");
+		var failMgs = document.getElementById("failAttempt");
+		// the amount attempts user have
+		var attempt = 0;
+
+		loginBtn.onclick = function(){
+			loginForm.style.display = "block";
+			signUpForm.style.display = "none";
+			loginBtn.style.backgroundColor = "black";
+			signUpBtn.style.backgroundColor = "#4CAF50";
+			message.style.display = "none";
+		}
+
+		signUpBtn.onclick = function(){
+			loginForm.style.display = "none";
+			signUpForm.style.display = "block";
+			loginBtn.style.backgroundColor = "#4CAF50";
+			signUpBtn.style.backgroundColor = "black";
+		}
+
+		finalLoginBtn.onclick = function(){
+			if(attempt < 5){
+				attempt++;
+				if(userEmail.value == realEmail){
+				if(userPassword.value == realPass){
+					document.location.href = "HomePageMobile.html";
+				}else{
+					userPassword.style.backgroundColor = "#ffacac";
+					userPassword.style.borderColor = "red";
+				}
+				}else{
+					userEmail.style.backgroundColor = "#ffacac";
+					userEmail.style.borderColor = "red";
+				}
+			}else{
+				loginForm.style.display = "none";
+				failMgs.style.display = "block";
+				loginBtn.disabled = true;
+				signUpBtn.disabled = true;
+			}
+		}
+
+		finalSignUpBtn.onclick = function(){
+			if(validInfo() == true){
+				storeAccount(email.value,password.value);
+				form.reset();
+				fName.style.backgroundColor = "white";
+				fName.style.borderColor = "lightgrey";
+				lName.style.backgroundColor = "white"
+				lName.style.borderColor = "lightgrey"
+				email.style.backgroundColor = "white";
+				email.style.borderColor = "lightgrey";
+				password.style.backgroundColor = "white";
+				password.style.borderColor = "lightgrey";
+				confirmPassword.style.backgroundColor = "white";
+				confirmPassword.style.borderColor = "lightgrey";
+				message.style.display = "block";
+			}
+		}
+
+		function validInfo(){
+			if(fName.value != ""){
+				isF = true;
+				fName.style.backgroundColor = "#9bff9d";
+				fName.style.borderColor = "green";
+			}else{
+				isF = false;
+				fName.style.backgroundColor = "#ffacac";
+				fName.style.borderColor = "red";
+			}
+
+			if(lName.value == ""){
+				lName.style.backgroundColor = "#ffacac";
+				lName.style.borderColor = "red";
+				isL = false;
+			}else{
+				lName.style.backgroundColor = "#9bff9d";
+				lName.style.borderColor = "green";
+				isL = true;
+			}
+
+			if(email.value == ""){
+				email.style.backgroundColor = "#ffacac";
+				email.style.borderColor = "red";
+				isE = false;
+			}else{
+				email.style.backgroundColor = "#9bff9d";
+				email.style.borderColor = "green";
+				isE = true;
+			}
+
+			if(password.value == ""){
+				password.style.backgroundColor = "#ffacac";
+				password.style.borderColor = "red";
+				isP = false;
+			}else{
+				password.style.backgroundColor = "#9bff9d";
+				password.style.borderColor = "green";
+				isP = true;
+			}
+
+			if(confirmPassword.value == "" || confirmPassword.value != password.value){
+				confirmPassword.style.backgroundColor = "#ffacac";
+				confirmPassword.style.borderColor = "red";
+				isCP = false;
+				
+			}else{
+				confirmPassword.style.backgroundColor = "#9bff9d";
+				confirmPassword.style.borderColor = "green";
+				isCP = true;
+			}
+
+			if(isF == true && isL == true && isE == true && isP == true && isCP == true){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		function storeAccount(theEmail, thePassword){
+			localStorage.setItem("email", theEmail);
+			localStorage.setItem("password", thePassword);
+			realEmail = localStorage.getItem("email");
+			realPass = localStorage.getItem("password");
+		}
+	</script>
+</body>
+</html>

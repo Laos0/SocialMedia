@@ -1,0 +1,266 @@
+<html><head>
+	
+	<link rel="stylesheet" type="text/css" href="SocialMediaDeskTopAlexCSS.css">
+	<title>Social Media Website</title>
+</head>
+<body id="backGround">
+<center>
+	<div class="topNav">
+		<h1>Social Media</h1>
+	</div>
+	<hr>
+	
+	<div>
+		<h2>Ask A Question</h2>
+	</div>
+	<div class="popUpWindow">
+		<div id="modal">
+			<div id="modal-content">
+				<span class="close">×</span> <br><br>
+				<h2> Search Keywords</h2> <br><br>
+				<form id="myForm">
+				<input type="text" name="fName" id="fName" placeholder="Enter Question Here..."><br><br>
+			</form></div>
+		</div>
+	</div>
+	
+	<table>
+		<tbody><tr><td><button type="button" id="signUpBtn" onclick="signUp()"><h3>Search Your Question</h3></button><button type="button" class="loginBtn" onclick="login()"><h3>Ask a Question</h3></button> <br><br><br><br></td></tr>
+	</tbody></table>
+	
+	<p></p>
+
+	<table style="width:100%">
+		<tbody><tr>
+		  <th>Topic</th>
+		  <th>Last commenter</th> 
+		  <th>Replies</th>
+
+		</tr>
+		<tr>
+		  <td><a href="url" style="color: #000000">HELP PLZ MUH CODE BROKE!!! </a></td>
+		  <td>Smith</td> 
+		  <td>4</td>
+		</tr>
+		<tr>
+		  <td><a href="url" style="color: #000000">My hard drive exploded, why?</a></td>
+		  <td>Jackson</td> 
+		  <td>18</td>
+		</tr>
+		<tr>
+			<td><a href="url" style="color: #000000">are floppy disks edible?</a></td>
+			<td>John</td> 
+			<td>45</td>
+		  </tr>
+		  <tr>
+			<td><a href="url" style="color: #000000">Is java a fruit?</a></td>
+			<td>xxxfruitcakexxx</td> 
+			<td>1</td>
+		  </tr>
+		<tr>
+		  <td><a href="url" style="color: #000000">How can I download more RAM?</a></td>
+		  <td>PCPartsMan</td> 
+		  <td>5</td>
+		</tr>
+		<tr>
+		  <td><a href="url" style="color: #000000">943 compiler errors, please help</a></td>
+		  <td>Username451</td> 
+		  <td>7</td>
+		</tr>
+	  </tbody></table>
+
+	</center>
+	<div id="modalL">
+		<div id="modal-content">
+			<span class="close1">×</span> <br><br>
+			<center>
+				<h2><b>Enter Your Question</b></h2>
+				<input type="text" placeholder="Topic Title" id="userEmail"><br><br>
+				<textarea name="comment" form="usrform">Enter text here...</textarea>
+				<div id="userError"></div>
+				<button id="submit">Submit</button>
+				<table>
+					<tbody><tr><td><button id="userLogin" hidden="true">Login</button></td></tr>
+				</tbody></table>
+			</center>
+			
+			
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		var signUpBtn = document.getElementById("signUpBtn"); // the sign up button
+		var loginBtn = document.getElementsByClassName("loginBtn")[0]; // the login button
+		var userLoginBtn = document.getElementById("userLogin");
+		var modal = document.getElementById("modal"); // get the modal for sign up
+		var modalL = document.getElementById("modalL"); // get modal for login
+		var closeBtn = document.getElementsByClassName("close")[0]; // exit button
+		var closeBtn1 = document.getElementsByClassName("close1")[0]; // exit button for login modal
+		var submitBtn = document.getElementById("submitBtn"); // submit button
+		var cancelBtn = document.getElementById("cancelBtn"); // cancel button
+		var displayError = document.getElementById("isPassCorrect"); // if user mismatch password, then display this
+		var popUp = document.getElementById("modal-content"); // Replace this to the thankYou
+		var thankYou = document.getElementsByClassName("thankYou")[0];
+		// The variables below is for the user login
+		var form = document.getElementById("myForm");
+		var fName = document.getElementById("fName");
+		var lName = document.getElementById("lName");
+		var email = document.getElementById("email");
+		var password = document.getElementById("password"); // user password
+		var confirmPassword = document.getElementById("confirmPassword"); // user password
+		var isGood = false; // once this becomes true, the user can now submit and signup for his/her account
+		var isF = false;
+		var isL = false;
+		var isE = false;
+		// Logging in information
+		var realEmail = null;
+		var realPass = null;
+
+		var isPasswordGood = false; // check to see if password is correct
+
+		// User information
+		var userEmail = document.getElementById("userEmail");
+		var userPass = document.getElementById("userPass");
+		var displayUserErr = document.getElementById("userError");
+
+		userLoginBtn.onclick = function(){
+			if(userEmail.value == realEmail){
+				console.log("Email match");
+				if(userPass.value == realPass){
+					console.log("Password match, login");
+					document.location.href = "HomePage.html";
+				}else{
+					console.log("password is incorrect");
+					displayUserErr.innerHTML = "Password is incorrect";
+					displayUserErr.style.color = "red";
+				}
+			}else{
+				console.log("Email does not exist");
+				displayUserErr.innerHTML = "Email does not exist";
+				displayUserErr.style.color = "red";
+			}
+		}
+		
+
+		signUpBtn.onclick = function(){
+			//console.log("signupBTN clicked");
+			modal.style.display = "block";
+		}
+
+		loginBtn.onclick = function(){
+			modalL.style.display = "block";
+		}
+
+		closeBtn.onclick = function(){
+			modal.style.display = "none";
+		}
+
+		closeBtn1.onclick = function(){
+			modalL.style.display = "none";
+		}
+
+
+
+		submitBtn.onclick = function(){
+
+			if(fName.value == ""){
+				fName.style.backgroundColor = "#ffacac";
+				fName.style.borderColor = "red";
+				isF = false;
+			}else{
+				fName.style.backgroundColor = "#9bff9d";
+				fName.style.borderColor = "green";
+				isF = true;
+			}
+
+			if(lName.value == ""){
+				lName.style.backgroundColor = "#ffacac";
+				lName.style.borderColor = "red";
+				isL = false;
+			}else{
+				lName.style.backgroundColor = "#9bff9d";
+				lName.style.borderColor = "green";
+				isL = true;
+			}
+
+			if(email.value == ""){
+				email.style.backgroundColor = "#ffacac";
+				email.style.borderColor = "red";
+				isE = false;
+			}else{
+				email.style.backgroundColor = "#9bff9d";
+				email.style.borderColor = "green";
+				isE = true;
+			}
+
+			if(password.value == ""){
+				password.style.backgroundColor = "#ffacac";
+				password.style.borderColor = "red";
+				isGood = false;
+			}else{
+				password.style.backgroundColor = "#9bff9d";
+				password.style.borderColor = "green";
+				isGood = true;
+			}
+
+			if(confirmPassword.value == "" || confirmPassword.value != password.value){
+				confirmPassword.style.backgroundColor = "#ffacac";
+				confirmPassword.style.borderColor = "red";
+				isPasswordGood = false;
+				isGood = false;
+			}else{
+				confirmPassword.style.backgroundColor = "#9bff9d";
+				confirmPassword.style.borderColor = "green";
+				isPasswordGood = true;
+				isGood = true;
+			}
+
+			if(isGood == true && isF == true && isL == true && isE == true){
+				displayError.innerHTML = ""; 
+				// Once requirements are fill, hide modal
+				modal.style.display = "none";
+				thankYou.style.display = "block";
+				storeAccount(email.value, password.value);
+				form.reset();
+				fName.style.backgroundColor = "white";
+				fName.style.borderColor = "lightgrey";
+				lName.style.backgroundColor = "white"
+				lName.style.borderColor = "lightgrey"
+				email.style.backgroundColor = "white";
+				email.style.borderColor = "lightgrey";
+				password.style.backgroundColor = "white";
+				password.style.borderColor = "lightgrey";
+				confirmPassword.style.backgroundColor = "white";
+				confirmPassword.style.borderColor = "lightgrey";
+
+				console.log(localStorage.getItem("email"));
+				console.log(localStorage.getItem("password"));
+			}else{
+				displayError.innerHTML = "Please fill/fix the errors above. <br>"
+				if(isPasswordGood){
+
+				}else{
+					displayError.innerHTML += "Password did not match.";
+				}
+				
+			}
+
+		}
+
+		cancelBtn.onclick = function(){
+			modal.style.display = "none";
+		}
+
+		// Account Obj
+		function storeAccount(theEmail, thePassword){
+			localStorage.setItem("email", theEmail);
+			localStorage.setItem("password", thePassword);
+			realEmail = localStorage.getItem("email");
+			realPass = localStorage.getItem("password");
+		}
+
+
+
+	</script>
+
+</body></html>

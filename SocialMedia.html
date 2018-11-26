@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="D:\2018 Classes\HCI\Social Media Project\Website/style.css">
+	<title>Social Media Website</title>
+</head>
+<body id="backGround">
+<center>
+	<div class="topNav">
+		<h1>Social Media</h1>
+	</div>
+	<hr>
+	
+	<div>
+		<h2>New to the site? Sign up!</h2>
+	</div>
+	<div class="popUpWindow">
+		<div id="modal">
+			<div id="modal-content">
+				<span class="close">&times;</span> <br></br>
+				<h2> SIGN UP!</h2> <br></br>
+				<form id="myForm">
+				<input type="text" name="fName" id="fName" placeholder="First Name"><br></br>
+				<input type="text" name="lName" id="lName" placeholder="Last Name"><br></br>
+				<input type="text" name="email" id="email" placeholder="Email"><br></br>
+				<input type="password" name="password" id="password" placeholder="Password"><br></br>
+				<input type="password" name="conPassword" id="confirmPassword" placeholder="Confirm Password">
+				</form>
+				<p id="isPassCorrect"></p>
+				<table>
+					<tr><td><button type="button" id="cancelBtn" onclick="cancel()">Cancel</button></td></tr>
+					<tr><td><button type="button" id="submitBtn" onclick="signUp()">Submit</button></td></tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<table>
+		<tr><td><button type="button" id="signUpBtn" onclick="signUp()"><h3>Sign Up</h3></button><button type="button" class="loginBtn" onclick="login()"><h3>Login In</h3></button> <br></br><br></br></td></tr>
+	</table>
+	
+	<div>
+		<h3 class="thankYou">Thank you for signing up on Social Media!! <br> Click on login to login onto your account</h3>
+	</div>
+	</center>
+	<div id="modalL">
+		<div id="modal-content">
+			<span class="close1">&times;</span> <br></br>
+			<center>
+				<h2><b>Login</b></h2>
+				<input type="text" placeholder="Email Address" id="userEmail"><br></br>
+				<input type="password" placeholder="Password" id="userPass"><br></br>
+				<div id="userError"></div>
+				<table>
+					<tr><td><button id="userLogin">Login</button></button></td></tr>
+				</table>
+			</center>
+			
+			
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		var signUpBtn = document.getElementById("signUpBtn"); // the sign up button
+		var loginBtn = document.getElementsByClassName("loginBtn")[0]; // the login button
+		var userLoginBtn = document.getElementById("userLogin");
+		var modal = document.getElementById("modal"); // get the modal for sign up
+		var modalL = document.getElementById("modalL"); // get modal for login
+		var closeBtn = document.getElementsByClassName("close")[0]; // exit button
+		var closeBtn1 = document.getElementsByClassName("close1")[0]; // exit button for login modal
+		var submitBtn = document.getElementById("submitBtn"); // submit button
+		var cancelBtn = document.getElementById("cancelBtn"); // cancel button
+		var displayError = document.getElementById("isPassCorrect"); // if user mismatch password, then display this
+		var popUp = document.getElementById("modal-content"); // Replace this to the thankYou
+		var thankYou = document.getElementsByClassName("thankYou")[0];
+		// The variables below is for the user login
+		var form = document.getElementById("myForm");
+		var fName = document.getElementById("fName");
+		var lName = document.getElementById("lName");
+		var email = document.getElementById("email");
+		var password = document.getElementById("password"); // user password
+		var confirmPassword = document.getElementById("confirmPassword"); // user password
+		var isGood = false; // once this becomes true, the user can now submit and signup for his/her account
+		var isF = false;
+		var isL = false;
+		var isE = false;
+		// Logging in information
+		var realEmail = null;
+		var realPass = null;
+
+		var isPasswordGood = false; // check to see if password is correct
+
+		// User information
+		var userEmail = document.getElementById("userEmail");
+		var userPass = document.getElementById("userPass");
+		var displayUserErr = document.getElementById("userError");
+
+		userLoginBtn.onclick = function(){
+			if(userEmail.value == realEmail){
+				console.log("Email match");
+				if(userPass.value == realPass){
+					console.log("Password match, login");
+					document.location.href = "HomePage.html";
+				}else{
+					console.log("password is incorrect");
+					displayUserErr.innerHTML = "Password is incorrect";
+					displayUserErr.style.color = "red";
+				}
+			}else{
+				console.log("Email does not exist");
+				displayUserErr.innerHTML = "Email does not exist";
+				displayUserErr.style.color = "red";
+			}
+		}
+		
+
+		signUpBtn.onclick = function(){
+			//console.log("signupBTN clicked");
+			modal.style.display = "block";
+		}
+
+		loginBtn.onclick = function(){
+			modalL.style.display = "block";
+		}
+
+		closeBtn.onclick = function(){
+			modal.style.display = "none";
+		}
+
+		closeBtn1.onclick = function(){
+			modalL.style.display = "none";
+		}
+
+
+
+		submitBtn.onclick = function(){
+
+			if(fName.value == ""){
+				fName.style.backgroundColor = "#ffacac";
+				fName.style.borderColor = "red";
+				isF = false;
+			}else{
+				fName.style.backgroundColor = "#9bff9d";
+				fName.style.borderColor = "green";
+				isF = true;
+			}
+
+			if(lName.value == ""){
+				lName.style.backgroundColor = "#ffacac";
+				lName.style.borderColor = "red";
+				isL = false;
+			}else{
+				lName.style.backgroundColor = "#9bff9d";
+				lName.style.borderColor = "green";
+				isL = true;
+			}
+
+			if(email.value == ""){
+				email.style.backgroundColor = "#ffacac";
+				email.style.borderColor = "red";
+				isE = false;
+			}else{
+				email.style.backgroundColor = "#9bff9d";
+				email.style.borderColor = "green";
+				isE = true;
+			}
+
+			if(password.value == ""){
+				password.style.backgroundColor = "#ffacac";
+				password.style.borderColor = "red";
+				isGood = false;
+			}else{
+				password.style.backgroundColor = "#9bff9d";
+				password.style.borderColor = "green";
+				isGood = true;
+			}
+
+			if(confirmPassword.value == "" || confirmPassword.value != password.value){
+				confirmPassword.style.backgroundColor = "#ffacac";
+				confirmPassword.style.borderColor = "red";
+				isPasswordGood = false;
+				isGood = false;
+			}else{
+				confirmPassword.style.backgroundColor = "#9bff9d";
+				confirmPassword.style.borderColor = "green";
+				isPasswordGood = true;
+				isGood = true;
+			}
+
+			if(isGood == true && isF == true && isL == true && isE == true){
+				displayError.innerHTML = ""; 
+				// Once requirements are fill, hide modal
+				modal.style.display = "none";
+				thankYou.style.display = "block";
+				storeAccount(email.value, password.value);
+				form.reset();
+				fName.style.backgroundColor = "white";
+				fName.style.borderColor = "lightgrey";
+				lName.style.backgroundColor = "white"
+				lName.style.borderColor = "lightgrey"
+				email.style.backgroundColor = "white";
+				email.style.borderColor = "lightgrey";
+				password.style.backgroundColor = "white";
+				password.style.borderColor = "lightgrey";
+				confirmPassword.style.backgroundColor = "white";
+				confirmPassword.style.borderColor = "lightgrey";
+
+				console.log(localStorage.getItem("email"));
+				console.log(localStorage.getItem("password"));
+			}else{
+				displayError.innerHTML = "Please fill/fix the errors above. <br>"
+				if(isPasswordGood){
+
+				}else{
+					displayError.innerHTML += "Password did not match.";
+				}
+				
+			}
+
+		}
+
+		cancelBtn.onclick = function(){
+			modal.style.display = "none";
+		}
+
+		// Account Obj
+		function storeAccount(theEmail, thePassword){
+			localStorage.setItem("email", theEmail);
+			localStorage.setItem("password", thePassword);
+			realEmail = localStorage.getItem("email");
+			realPass = localStorage.getItem("password");
+		}
+
+
+
+	</script>
+</body>
+</html>

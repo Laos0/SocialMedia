@@ -1,0 +1,142 @@
+body{
+	background-color: #333;
+}
+h1{
+	color: #4CAF50;
+}
+h2{
+	color: #4CAF50;
+}
+button {
+	padding: 2px 15px;
+	margin: 8px 3px;
+	background-color: #4CAF50;
+	float: left;
+	clear: right;
+}
+
+/* Only thing I added was this stuff (Alex) */
+table {
+    font-family: arial, sans-serif;
+	border-collapse: collapse;
+	background-color: #4CAF50;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: rgb(90, 233, 95);
+}
+
+
+
+h3{
+	color:white;
+}
+lable{
+	display: inline-block;
+	float: left;
+	clear: left;
+	width: 2000px;
+	text-align: left;
+}
+#modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width:60%;
+	height: 80%;
+	/*overflow: auto;*/ 
+	background-color: rbg(4,5,5);
+	background-color: rgba(0,0,0,0,.4);
+}
+#modalL{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width:60%;
+	height: 80%;
+	/*overflow: auto;*/ 
+	background-color: rbg(4,5,5);
+	background-color: rgba(0,0,0,0,.4);
+}
+#modal-content{
+	background-color: #fefefe;
+	margin:auto;
+	padding: 10px;
+	border: 20px solid #888;
+	width: 80%;
+}
+.close:hover,
+.close focus{
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+.close{
+	color: #000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close1:hover,
+.close1 focus{
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+.close1{
+	color: #000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+#modal-content{
+	/* animation */
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: .6s;
+	animation-name: zoom;
+	animation-duration: .6s;
+}
+@-webkit-keyframes zoom{
+	from {-webkit-transform:scale(0);}
+	to {-webkit-transform:scale(1);}
+}
+@keyframes zoom{
+	from {transform:scale(0);}
+	to {transform:scale(1);}
+}
+.darkBackGround{
+	background-color:rgba(255,200,0,0.2);
+
+}
+#submitBtn{
+	color: white;
+}
+#isPassCorrect{
+	color:red;
+}
+.thankYou{
+	display: none;
+}
+
+#cancelBtn{
+	color:white;
+	background-color: red;
+}
+.closeX{
+	display: none;
+}
+#userLogin{
+	color: white;
+}

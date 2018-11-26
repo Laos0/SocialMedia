@@ -1,0 +1,1552 @@
+<html><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Uses "BrowseQuestion_Desktop_CSS.css" file for CSS-->
+    <link rel="stylesheet" type="text/css" href="SocialMediaMobileAdamCSS.css">
+    <title>Social Media Website Mobile</title>
+</head>
+<body>
+
+    <center>
+        <div>
+            <h1><img class="backButton" align="left" src="http://iconsetc.com/icons-watermarks/simple-ios-neon-green-gradient/classica/classica_back-button-1/classica_back-button-1_simple-ios-neon-green-gradient_512x512.png" alt="Image Not Found"> Social Media Site <img class="settingButton" align="right" src="https://cdn1.iconfinder.com/data/icons/green-business/720/settings-512.png" alt="Image Not Found"><p></p></h1>
+        </div>
+    </center>
+
+    <!--Break point between main header and other content of page-->
+    <hr>
+    
+    <center>
+        <div>
+            <form name="searchForm" method="POST">
+                <div>
+                    <input type="text" name="Search" placeholder="Enter Your Question">    
+                    
+                    <br><br>
+
+                    <div>
+                        <button type="button" class="filterButton" id="filterButton" onclick="showFilter()">Filter</button>
+                    </div>
+
+                    <div id="filterDIV" style="display: none;">
+                        <table width="100">
+                            <tbody><tr>
+                                <td>
+                                    <label class="container">
+                                        <input type="checkbox" name="cSharpCheck" id="cSharpCheck" value="false" autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>   
+                                <td style="text-align:right;">C#</td>
+                            </tr><tr>
+                            </tr>              
+                                <tr><td>
+                                    <label class="container">
+                                        <input type="checkbox" name="cPlusPlusCheck" id="cPlusPlusCheck" value="false" autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>                                   
+                                 </td>
+                                 <td style="text-align:right;">C++</td>
+                            </tr><tr>
+                                <td>
+                                    <label class="container">
+                                        <input type="checkbox" name="javaCheck" id="javaCheck" value="false" autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td style="text-align:right;">Java</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="container">
+                                        <input type="checkbox" name="pythonCheck" id="pythonCheck" value="false" autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td style="text-align:right;">Python</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="container">
+                                        <input type="checkbox" name="unityCheck" id="unityCheck" value="false" autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td style="text-align:right;">Unity</td>
+                            </tr>
+                                <tr><td>
+                                    <label class="container">
+                                        <input type="checkbox" name="unrealCheck" id="unrealCheck" value="false" autocomplete="off">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td style="text-align:right;">Unreal</td> 
+                            </tr>
+                        </tbody></table>
+
+                        <br><table width="200">
+                            <tbody><tr>
+                                
+                                <td><button type="reset" class="clearButton" id="clearButton" onclick="clear()">Clear Search</button></td>
+                                <td><button type="submit" class="searchButton" id="searchButton" onclick="return search()">Search</button></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+                
+                <div>
+                    
+                </div>
+            </form>
+        </div>
+    </center>
+
+    <hr>
+    <center>
+        <div>
+            <table width="200">
+                <tbody><tr>
+                    <td><h2 id="searchTitle">Top Questions of the Day:</h2></td>
+                </tr>
+            </tbody></table>
+            
+                <!--Table to determine which images and other sources of information are to be showed
+                Random images are used as the initial 5 images for the "Top Questions of the Day"-->
+                <table width="100" id="t01" style="border-bottom: 1px solid #4CAF50">
+                    <tbody><tr id="element1" style="border-bottom: 1px solid #4CAF50">
+                        <td id="tableColAdj"><p><img id="image1" src="https://i.stack.imgur.com/mDnBH.png" alt="Image Not Found"></p></td>
+                        <td><p id="problemTitle1">How to Avoid a Stack Overflow</p></td>
+                        <td id="tableColAdj"><p id="problemCategory1">C#</p></td>
+                    </tr>
+                    <tr id="element2">
+                        <td id="tableColAdj"><p><img id="image2" src="https://pbs.twimg.com/media/C4MhbszUEAAW3LO.jpg" alt="Image Not Found"></p></td>
+                        <td><p id="problemTitle2">Testing Wrapper of a Third Party Library</p></td>
+                        <td id="tableColAdj"><p id="problemCategory2">Python</p></td>
+                    </tr>
+                    <tr id="element3">
+                        <td id="tableColAdj"><p><img id="image3" src="https://i.ytimg.com/vi/uZsNMoojEDQ/maxresdefault.jpg" alt="Image Not Found"></p></td>
+                        <td><p id="problemTitle3">Nested Json Imgur API</p></td>
+                        <td id="tableColAdj"><p id="problemCategory3">C#</p></td>
+                    </tr>
+                    <tr id="element4">
+                        <td id="tableColAdj"><p><img id="image4" src="https://answers.unrealengine.com/storage/temp/218036-unreal4-characterbp1.png" alt="Image Not Found"></p></td>
+                        <td><p id="problemTitle4">Adding C++ Script to Object Blueprints</p></td>
+                        <td id="tableColAdj"><p id="problemCategory4">Unreal</p></td>
+                    </tr>
+                    <tr id="element5">
+                        <td id="tableColAdj"><p><img id="image5" src="https://docs.microsoft.com/en-us/dotnet/core/tutorials/media/with-visual-studio/codewindow.png" alt="Image Not Found"></p></td>
+                        <td><p id="problemTitle5">Removing Transparency Using Imagemagick.NET</p></td>
+                        <td id="tableColAdj"><p id="problemCategory5">C#</p></td>
+                    </tr>
+                </tbody></table>
+            </div>
+        
+    </center>
+
+    <center>
+        <div>
+            <p style="Color: #4CAF50;">Loading...</p>
+        </div>
+    </center>
+    
+    <script type="text/javascript">
+
+        function showFilter(){
+            var filter = document.getElementById("filterDIV");
+            if (filter.style.display == "none"){
+                filter.style.display = "block";
+            }else{
+                filter.style.display = "none";
+            }
+        }
+        
+        //Array of Problem titles
+        var titleSet_CSharp = ["How to Avoid a Stack Overflow","Populate Realms IList", "Nested Json Imgur API", "Creating a Platform to Hanglee CRUD Scenarios", "Removing Transparency Using Imagemagick.NET"];
+        var titleSet_CPlusPlus = ["Modify an Inner Object", "How to Break Circular Dependency in C++", "How to Use a Base Class Pointer", "Creating Dynamically Allocated Objects", "How to Convert Arrays into Vector Pointers"];
+        var titleSet_Java = ["How to Implement Methods", "Access Previous Input Paramaters", "Accessing Data From Subclasses", "SQL Server Attempting to Connect Wrong Username", "Matrix Multiplication in Java"];
+        var titleSet_Python = ["Creating Vertical Arrays", "Testing Wrapper of a Third Party Library", "Python Dask AttributeError", "Sparse Matrices with Empty Values", "Python: UnexpectedAlterPresentException"];
+        var titleSet_Unity = ["How to Optimize Your Map", "Stuck Importing Animation Tree", "Assets Don't Appear in Content Folder", "Player Camera Clipping Surroundings", "How to Implement a Splash Screen"];
+        var titleSet_Unreal = ["Directed Graph Database Application", "PhysX Implementation", "How to Rotate Child Object Without Parent Object", "Adding C++ Script to Object Blueprints", "Implementation of Sockets in UE4"];
+
+        //Array of images sources
+        var imgSet_CSharp = ["https://i.stack.imgur.com/mDnBH.png",
+        "https://www.dreamincode.net/forums/uploads/monthly_03_2011/post-0-13007232727918.png",
+        "https://i.ytimg.com/vi/uZsNMoojEDQ/maxresdefault.jpg", 
+        "http://fedafi.com/images/csharp.jpg", 
+        "https://docs.microsoft.com/en-us/dotnet/core/tutorials/media/with-visual-studio/codewindow.png"];
+        var imgSet_CPlusPlus = ["https://cdn.lynda.com/course/162139/162139-636322790249127779-16x9.jpg", 
+        "http://www.cplusplus.com/articles/L0pk4iN6/long_completion.png", 
+        "https://raw.githubusercontent.com/ludwigpacifici/modern-cpp-font-lock/master/img/mc%2B%2Bfl-on.png", 
+        "https://cdn2.macworld.co.uk/cmsdata/features/3636924/hello_world_netbeans.jpg", 
+        "https://hackster.imgix.net/uploads/attachments/341053/screen_shot_2017-08-20_at_11_41_41_rhqs00i5ko.png?auto=compress&w=900&h=675&fit=min&fm=jpg"];
+        var imgSet_Java = ["https://cdn-images-1.medium.com/max/1600/1*oAshb_Imd_kGL8ma5kwexw.png",
+        "https://comps.canstockphoto.com/digital-java-code-text-computer-drawing_csp53903992.jpg",
+        "https://www.researchgate.net/profile/Md_Masudur_Rahman9/publication/317401664/figure/fig2/AS:504826271408129@1497371370743/Source-Code-Example-Customerjava-Partial.png",
+        "https://i.ytimg.com/vi/B_8_J2HLqIA/maxresdefault.jpg",
+        "http://blog.harisaltaf.com/wp-content/uploads/2011/12/java2.png"];
+        var imgSet_Python = ["https://cdn-images-1.medium.com/max/1600/1*2rvLWwFrmgahCoGSSPS_xA.png",
+        "https://pbs.twimg.com/media/C4MhbszUEAAW3LO.jpg",
+        "https://firstcode-codeninjas-v3.s3.amazonaws.com/sg/uploads/course_module/39/img_url/python.jpg",
+        "https://d3nmt5vlzunoa1.cloudfront.net/pycharm/files/2015/03/intentions3.png",
+        "https://code.visualstudio.com/assets/docs/python/tutorial/debug-configurations.png"];
+        var imgSet_Unity = ["https://blogs.unity3d.com/wp-content/uploads/2009/03/no_source_needed_path.png",
+        "https://blogs.unity3d.com/wp-content/uploads/2017/05/sg_2-1280x720.jpg",
+        "https://i1.wp.com/darkgenesis.zenithmoon.com/wp-content/uploads/2015/04/VSCodeFolder.png",
+        "https://cdn-images-1.medium.com/max/1600/1*r3ihnAstxkZnDFG6qNrtvg.png",
+        "https://www.codeproject.com/KB/game/1216876/GhostCubeUnity.png"];
+        var imgSet_Unreal = ["https://answers.unrealengine.com/storage/temp/57192-przechwytywanie.png",
+        "http://i62.tinypic.com/14jugsp.jpg",
+        "http://gamelab.mit.edu/wp/wp-content/uploads/2014/11/Blueprint.jpg",
+        "https://answers.unrealengine.com/storage/temp/218036-unreal4-characterbp1.png",
+        "http://forum.skookumscript.com/uploads/default/original/1X/f9b660b259b7ebdbc9d67229bce47ce42b94ef69.png"];
+
+        //Array of search Titles
+        var searchTitleSet = ["Top C# Questions of the Day", "Top C++ Questions of the Day", "Top Java Questions of the Day", "Top Python Questions of the Day", "Top Unity Questions of the Day", "Top Unreal Questions of the Day"];
+
+        //Array of filter categories
+        var catergoriesMain = ["C#", "C++", "Java", "Python", "Unity", "Unreal"];
+        //NOT YET USED (TOO MUCH DATA)
+        var catergoriesSub = ["Optimization", "Database", "Application", "Animation", "Graphics", "SQL Server", "JavaScript", "API", "Arrays", "Parent and Child Objects"];
+
+        function search(){
+            //variables of the 5 images on the main page
+            var img1 = document.getElementById("image1");
+            var img2 = document.getElementById("image2");
+            var img3 = document.getElementById("image3");
+            var img4 = document.getElementById("image4");
+            var img5 = document.getElementById("image5");
+
+            var probTitle1 = document.getElementById("problemTitle1");
+            var probTitle2 = document.getElementById("problemTitle2");
+            var probTitle3 = document.getElementById("problemTitle3");
+            var probTitle4 = document.getElementById("problemTitle4");
+            var probTitle5 = document.getElementById("problemTitle5");
+
+            var catergory1 = document.getElementById("problemCategory1");
+            var catergory2 = document.getElementById("problemCategory2");
+            var catergory3 = document.getElementById("problemCategory3");
+            var catergory4 = document.getElementById("problemCategory4");
+            var catergory5 = document.getElementById("problemCategory5");
+
+            var searchTitle = document.getElementById("searchTitle")
+
+
+            var element1 = document.getElementById("e1");
+            var element2 = document.getElementById("e2");
+            var element3 = document.getElementById("e3");
+            var element4 = document.getElementById("e4");
+            var element5 = document.getElementById("e5");
+
+            //check to determine which checkboxes (filter options) are currently checked when the user presses "Search"
+            //only c# filter
+            //please dont hate me for this...
+            if((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CSharp[1];
+                img3.src=imgSet_CSharp[2];
+                img4.src=imgSet_CSharp[3];
+                img5.src=imgSet_CSharp[4];
+                searchTitle.innerHTML = searchTitleSet[0];
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CSharp[1];
+                probTitle3.innerHTML = titleSet_CSharp[2];
+                probTitle4.innerHTML = titleSet_CSharp[3];
+                probTitle5.innerHTML = titleSet_CSharp[4];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[0];
+                catergory3.innerHTML = catergoriesMain[0];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[0];
+                return false;
+            }
+            //only c++ filter
+            else if((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_CPlusPlus[1];
+                img3.src=imgSet_CPlusPlus[2];
+                img4.src=imgSet_CPlusPlus[3];
+                img5.src=imgSet_CPlusPlus[4];
+                searchTitle.innerHTML = searchTitleSet[1];
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[1];
+                probTitle3.innerHTML = titleSet_CPlusPlus[2];
+                probTitle4.innerHTML = titleSet_CPlusPlus[3];
+                probTitle5.innerHTML = titleSet_CPlusPlus[4];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[1];
+                catergory4.innerHTML = catergoriesMain[1];
+                catergory5.innerHTML = catergoriesMain[1];
+                return false;
+            }
+            //only java filter
+            else if((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_Java[1];
+                img3.src=imgSet_Java[2];
+                img4.src=imgSet_Java[3];
+                img5.src=imgSet_Java[4];
+                searchTitle.innerHTML = searchTitleSet[2];
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_Java[1];
+                probTitle3.innerHTML = titleSet_Java[2];
+                probTitle4.innerHTML = titleSet_Java[3];
+                probTitle5.innerHTML = titleSet_Java[4];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[2];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //only python filter
+            else if((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Python[0];
+                img2.src=imgSet_Python[1];
+                img3.src=imgSet_Python[2];
+                img4.src=imgSet_Python[3];
+                img5.src=imgSet_Python[4];
+                searchTitle.innerHTML = searchTitleSet[3];
+                probTitle1.innerHTML = titleSet_Python[0];
+                probTitle2.innerHTML = titleSet_Python[1];
+                probTitle3.innerHTML = titleSet_Python[2];
+                probTitle4.innerHTML = titleSet_Python[3];
+                probTitle5.innerHTML = titleSet_Python[4];
+                catergory1.innerHTML = catergoriesMain[3];
+                catergory2.innerHTML = catergoriesMain[3];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }
+            //only unity filter
+            else if((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Unity[0];
+                img2.src=imgSet_Unity[1];
+                img3.src=imgSet_Unity[2];
+                img4.src=imgSet_Unity[3];
+                img5.src=imgSet_Unity[4];
+                searchTitle.innerHTML = searchTitleSet[4];
+                probTitle1.innerHTML = titleSet_Unity[0];
+                probTitle2.innerHTML = titleSet_Unity[1];
+                probTitle3.innerHTML = titleSet_Unity[2];
+                probTitle4.innerHTML = titleSet_Unity[3];
+                probTitle5.innerHTML = titleSet_Unity[4];
+                catergory1.innerHTML = catergoriesMain[4];
+                catergory2.innerHTML = catergoriesMain[4];
+                catergory3.innerHTML = catergoriesMain[4];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //only unreal filter
+            else if((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Unreal[0];
+                img2.src=imgSet_Unreal[1];
+                img3.src=imgSet_Unreal[2];
+                img4.src=imgSet_Unreal[3];
+                img5.src=imgSet_Unreal[4];
+                searchTitle.innerHTML = searchTitleSet[5];
+                probTitle1.innerHTML = titleSet_Unreal[0];
+                probTitle2.innerHTML = titleSet_Unreal[1];
+                probTitle3.innerHTML = titleSet_Unreal[2];
+                probTitle4.innerHTML = titleSet_Unreal[3];
+                probTitle5.innerHTML = titleSet_Unreal[4];
+                catergory1.innerHTML = catergoriesMain[5];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //C# and C++
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[0];
+                img3.src=imgSet_CPlusPlus[1];
+                img4.src=imgSet_CSharp[1];
+                img5.src=imgSet_CSharp[2];
+                searchTitle.innerHTML = "Top C# and C++ Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[0];
+                probTitle3.innerHTML = titleSet_CPlusPlus[1];
+                probTitle4.innerHTML = titleSet_CSharp[1];
+                probTitle5.innerHTML = titleSet_CSharp[2];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[1];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[0];
+                return false;
+            }
+            //C# and Java
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_Java[0];
+                img3.src=imgSet_CSharp[1];
+                img4.src=imgSet_CSharp[2];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top C# and Java Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_Java[0];
+                probTitle3.innerHTML = titleSet_CSharp[1];
+                probTitle4.innerHTML = titleSet_CSharp[2];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[0];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //C# and Python
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Python[0];
+                img2.src=imgSet_Python[1];
+                img3.src=imgSet_CSharp[0];
+                img4.src=imgSet_CSharp[1];
+                img5.src=imgSet_Python[2];
+                searchTitle.innerHTML = "Top C# and Python Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Python[0];
+                probTitle2.innerHTML = titleSet_Python[1];
+                probTitle3.innerHTML = titleSet_CSharp[0];
+                probTitle4.innerHTML = titleSet_CSharp[1];
+                probTitle5.innerHTML = titleSet_Python[2];
+                catergory1.innerHTML = catergoriesMain[3];
+                catergory2.innerHTML = catergoriesMain[3];
+                catergory3.innerHTML = catergoriesMain[0];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }
+            //C# and unity
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_Unity[0];
+                img3.src=imgSet_CSharp[1];
+                img4.src=imgSet_CSharp[2];
+                img5.src=imgSet_CSharp[3];
+                searchTitle.innerHTML = "Top C# and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_Unity[0];
+                probTitle3.innerHTML = titleSet_CSharp[1];
+                probTitle4.innerHTML = titleSet_CSharp[2];
+                probTitle5.innerHTML = titleSet_CSharp[3];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[4];
+                catergory3.innerHTML = catergoriesMain[0];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[0];
+                return false;
+            }
+            //C# and unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Unreal[0];
+                img2.src=imgSet_Unreal[1];
+                img3.src=imgSet_CSharp[0];
+                img4.src=imgSet_CSharp[1];
+                img5.src=imgSet_CSharp[2];
+                searchTitle.innerHTML = "Top C# and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Unreal[0];
+                probTitle2.innerHTML = titleSet_Unreal[1];
+                probTitle3.innerHTML = titleSet_CSharp[0];
+                probTitle4.innerHTML = titleSet_CSharp[1];
+                probTitle5.innerHTML = titleSet_CSharp[2];
+                catergory1.innerHTML = catergoriesMain[5];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[0];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[0];
+                return false;
+            }
+            //C++ and java
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Java[0];
+                img3.src=imgSet_Java[1];
+                img4.src=imgSet_CPlusPlus[1];
+                img5.src=imgSet_Java[2];
+                searchTitle.innerHTML = "Top C++ and Java Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Java[0];
+                probTitle3.innerHTML = titleSet_Java[1];
+                probTitle4.innerHTML = titleSet_CPlusPlus[1];
+                probTitle5.innerHTML = titleSet_Java[2];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[1];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //C++ and python
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Python[0];
+                img3.src=imgSet_CPlusPlus[1];
+                img4.src=imgSet_CPlusPlus[2];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C++ and Python Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Python[0];
+                probTitle3.innerHTML = titleSet_CPlusPlus[1];
+                probTitle4.innerHTML = titleSet_CPlusPlus[2];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[3];
+                catergory3.innerHTML = catergoriesMain[1];
+                catergory4.innerHTML = catergoriesMain[1];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }
+            //C++ and unity
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Unity[0];
+                img3.src=imgSet_CPlusPlus[1];
+                img4.src=imgSet_CPlusPlus[2];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C++ and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Unity[0];
+                probTitle3.innerHTML = titleSet_CPlusPlus[1];
+                probTitle4.innerHTML = titleSet_CPlusPlus[2];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[4];
+                catergory3.innerHTML = catergoriesMain[1];
+                catergory4.innerHTML = catergoriesMain[1];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //C++ and unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Unreal[0];
+                img2.src=imgSet_Unreal[1];
+                img3.src=imgSet_CPlusPlus[0];
+                img4.src=imgSet_CPlusPlus[1];
+                img5.src=imgSet_Unreal[2];
+                searchTitle.innerHTML = "Top C++ and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Unreal[0];
+                probTitle2.innerHTML = titleSet_Unreal[1];
+                probTitle3.innerHTML = titleSet_CPlusPlus[0];
+                probTitle4.innerHTML = titleSet_CPlusPlus[1];
+                probTitle5.innerHTML = titleSet_Unreal[2];
+                catergory1.innerHTML = catergoriesMain[5];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[1];
+                catergory4.innerHTML = catergoriesMain[1];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //java and python
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Python[0];
+                img2.src=imgSet_Python[1];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Java[1];
+                img5.src=imgSet_Python[2];
+                searchTitle.innerHTML = "Top Java and Python Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Python[0];
+                probTitle2.innerHTML = titleSet_Python[1];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Java[1];
+                probTitle5.innerHTML = titleSet_Python[2];
+                catergory1.innerHTML = catergoriesMain[3];
+                catergory2.innerHTML = catergoriesMain[3];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[2];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }
+            //java and unity
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Unity[0];
+                img2.src=imgSet_Unity[1];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Java[1];
+                img5.src=imgSet_Java[2];
+                searchTitle.innerHTML = "Top Java and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Unity[0];
+                probTitle2.innerHTML = titleSet_Unity[1];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Java[1];
+                probTitle5.innerHTML = titleSet_Java[2];
+                catergory1.innerHTML = catergoriesMain[4];
+                catergory2.innerHTML = catergoriesMain[4];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[2];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //java and unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_Unreal[0];
+                img3.src=imgSet_Unreal[0];
+                img4.src=imgSet_Unreal[2];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top Java and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_Unreal[0];
+                probTitle3.innerHTML = titleSet_Unreal[0];
+                probTitle4.innerHTML = titleSet_Unreal[2];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //python and unity
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Python[0];
+                img2.src=imgSet_Python[1];
+                img3.src=imgSet_Python[2];
+                img4.src=imgSet_Python[3];
+                img5.src=imgSet_Unity[0];
+                searchTitle.innerHTML = "Top Python and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Python[0];
+                probTitle2.innerHTML = titleSet_Python[1];
+                probTitle3.innerHTML = titleSet_Python[2];
+                probTitle4.innerHTML = titleSet_Python[3];
+                probTitle5.innerHTML = titleSet_Unity[0];
+                catergory1.innerHTML = catergoriesMain[3];
+                catergory2.innerHTML = catergoriesMain[3];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //python and unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Python[0];
+                img2.src=imgSet_Unreal[0];
+                img3.src=imgSet_Python[1];
+                img4.src=imgSet_Python[2];
+                img5.src=imgSet_Unreal[1];
+                searchTitle.innerHTML = "Top Python and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Python[0];
+                probTitle2.innerHTML = titleSet_Unreal[0];
+                probTitle3.innerHTML = titleSet_Python[1];
+                probTitle4.innerHTML = titleSet_Python[2];
+                probTitle5.innerHTML = titleSet_Unreal[1];
+                catergory1.innerHTML = catergoriesMain[3];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //unity and unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Unity[0];
+                img2.src=imgSet_Unreal[0];
+                img3.src=imgSet_Unity[1];
+                img4.src=imgSet_Unity[2];
+                img5.src=imgSet_Unreal[1];
+                searchTitle.innerHTML = "Top Unity and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Unity[0];
+                probTitle2.innerHTML = titleSet_Unreal[0];
+                probTitle3.innerHTML = titleSet_Unity[1];
+                probTitle4.innerHTML = titleSet_Unity[2];
+                probTitle5.innerHTML = titleSet_Unreal[1];
+                catergory1.innerHTML = catergoriesMain[4];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[4];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //C#, C++, Java
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked ==false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CSharp[1];
+                img3.src=imgSet_CPlusPlus[0];
+                img4.src=imgSet_Java[0];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top C#, C++, and Java Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CSharp[1];
+                probTitle3.innerHTML = titleSet_CPlusPlus[0];
+                probTitle4.innerHTML = titleSet_Java[0];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[0];
+                catergory3.innerHTML = catergoriesMain[1];
+                catergory4.innerHTML = catergoriesMain[2];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //C#, C++, python
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[0];
+                img3.src=imgSet_CPlusPlus[1];
+                img4.src=imgSet_Python[0];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C#, C++, and Python Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[0];
+                probTitle3.innerHTML = titleSet_CPlusPlus[1];
+                probTitle4.innerHTML = titleSet_Python[0];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[1];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }
+            //C#, C++, unity
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[0];
+                img3.src=imgSet_CPlusPlus[1];
+                img4.src=imgSet_Unity[0];
+                img5.src=imgSet_CSharp[1];
+                searchTitle.innerHTML = "Top C#, C++, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[0];
+                probTitle3.innerHTML = titleSet_CPlusPlus[1];
+                probTitle4.innerHTML = titleSet_Unity[0];
+                probTitle5.innerHTML = titleSet_CSharp[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[1];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[0];
+                return false;
+            }
+            //C#, C++, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[0];
+                img3.src=imgSet_Unreal[0];
+                img4.src=imgSet_Unreal[1];
+                img5.src=imgSet_Unreal[2];
+                searchTitle.innerHTML = "Top C#, C++, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[0];
+                probTitle3.innerHTML = titleSet_Unreal[0];
+                probTitle4.innerHTML = titleSet_Unreal[1];
+                probTitle5.innerHTML = titleSet_Unreal[2];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //C#, Java, python
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_CSharp[0];
+                img3.src=imgSet_Java[1];
+                img4.src=imgSet_Python[0];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C#, Java, and Python Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_CSharp[0];
+                probTitle3.innerHTML = titleSet_Java[1];
+                probTitle4.innerHTML = titleSet_Python[0];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[0];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }
+            //C#, Java, unity
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_CSharp[0];
+                img3.src=imgSet_Java[1];
+                img4.src=imgSet_Unity[0];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, Java, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_CSharp[0];
+                probTitle3.innerHTML = titleSet_Java[1];
+                probTitle4.innerHTML = titleSet_Unity[0];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[0];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //C#, Java, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_CSharp[0];
+                img3.src=imgSet_Java[1];
+                img4.src=imgSet_Unreal[0];
+                img5.src=imgSet_Unreal[1];
+                searchTitle.innerHTML = "Top C#, Java, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_CSharp[0];
+                probTitle3.innerHTML = titleSet_Java[1];
+                probTitle4.innerHTML = titleSet_Unreal[0];
+                probTitle5.innerHTML = titleSet_Unreal[1];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[0];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //C#, python, unity
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CSharp[1];
+                img3.src=imgSet_Python[0];
+                img4.src=imgSet_Unity[0];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, Python, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CSharp[1];
+                probTitle3.innerHTML = titleSet_Python[0];
+                probTitle4.innerHTML = titleSet_Unity[0];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[0];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //C#, python, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_Python[0];
+                img3.src=imgSet_Python[1];
+                img4.src=imgSet_CSharp[3];
+                img5.src=imgSet_Unreal[0];
+                searchTitle.innerHTML = "Top C#, Python, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_Python[0];
+                probTitle3.innerHTML = titleSet_Python[1];
+                probTitle4.innerHTML = titleSet_CSharp[3];
+                probTitle5.innerHTML = titleSet_Unreal[0];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[3];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //C#, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Unity[0];
+                img2.src=imgSet_Unity[1];
+                img3.src=imgSet_Unreal[0];
+                img4.src=imgSet_CSharp[0];
+                img5.src=imgSet_Unreal[1];
+                searchTitle.innerHTML = "Top C#, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Unity[0];
+                probTitle2.innerHTML = titleSet_Unity[1];
+                probTitle3.innerHTML = titleSet_Unreal[0];
+                probTitle4.innerHTML = titleSet_CSharp[0];
+                probTitle5.innerHTML = titleSet_Unreal[1];
+                catergory1.innerHTML = catergoriesMain[4];
+                catergory2.innerHTML = catergoriesMain[4];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //C++, java, python
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Java[0];
+                img3.src=imgSet_Java[1];
+                img4.src=imgSet_Python[0];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C++, Java, and Python Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Java[0];
+                probTitle3.innerHTML = titleSet_Java[1];
+                probTitle4.innerHTML = titleSet_Python[0];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }
+            //C++, java, unity
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Java[0];
+                img3.src=imgSet_Java[1];
+                img4.src=imgSet_Unity[0];
+                img5.src=imgSet_CPlusPlus[1];
+                searchTitle.innerHTML = "Top C++, Java, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Java[0];
+                probTitle3.innerHTML = titleSet_Java[1];
+                probTitle4.innerHTML = titleSet_Unity[0];
+                probTitle5.innerHTML = titleSet_CPlusPlus[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[1];
+                return false;
+            }
+            //C++, java, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_Java[1];
+                img3.src=imgSet_Java[2];
+                img4.src=imgSet_Unreal[0];
+                img5.src=imgSet_CPlusPlus[0];
+                searchTitle.innerHTML = "Top C++, Java, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_Java[1];
+                probTitle3.innerHTML = titleSet_Java[2];
+                probTitle4.innerHTML = titleSet_Unreal[0];
+                probTitle5.innerHTML = titleSet_CPlusPlus[0];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[1];
+                return false;
+            }
+            //C++, python, unity
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Python[0];
+                img3.src=imgSet_Python[1];
+                img4.src=imgSet_Unity[0];
+                img5.src=imgSet_CPlusPlus[1];
+                searchTitle.innerHTML = "Top C++, Python, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Python[0];
+                probTitle3.innerHTML = titleSet_Python[1];
+                probTitle4.innerHTML = titleSet_Unity[0];
+                probTitle5.innerHTML = titleSet_CPlusPlus[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[3];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[1];
+                return false;
+            }
+            //C++, python, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_CPlusPlus[1];
+                img3.src=imgSet_Python[0];
+                img4.src=imgSet_Unreal[0];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C++, Python, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[1];
+                probTitle3.innerHTML = titleSet_Python[0];
+                probTitle4.innerHTML = titleSet_Unreal[0];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }
+            //C++, untiy, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_CPlusPlus[1];
+                img3.src=imgSet_Unity[0];
+                img4.src=imgSet_Unreal[0];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C++, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[1];
+                probTitle3.innerHTML = titleSet_Unity[0];
+                probTitle4.innerHTML = titleSet_Unreal[0];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[4];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //java, python, unity
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Python[0];
+                img2.src=imgSet_Unity[1];
+                img3.src=imgSet_Unity[2];
+                img4.src=imgSet_Java[4];
+                img5.src=imgSet_Unity[3];
+                searchTitle.innerHTML = "Top Java, Python, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Python[0];
+                probTitle2.innerHTML = titleSet_Unity[1];
+                probTitle3.innerHTML = titleSet_Unity[2];
+                probTitle4.innerHTML = titleSet_Java[4];
+                probTitle5.innerHTML = titleSet_Unity[3];
+                catergory1.innerHTML = catergoriesMain[3];
+                catergory2.innerHTML = catergoriesMain[4];
+                catergory3.innerHTML = catergoriesMain[4];
+                catergory4.innerHTML = catergoriesMain[2];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //java, python, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Python[0];
+                img2.src=imgSet_Unreal[1];
+                img3.src=imgSet_Unreal[2];
+                img4.src=imgSet_Java[4];
+                img5.src=imgSet_Unreal[3];
+                searchTitle.innerHTML = "Top Java, Python, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Python[0];
+                probTitle2.innerHTML = titleSet_Unreal[1];
+                probTitle3.innerHTML = titleSet_Unreal[2];
+                probTitle4.innerHTML = titleSet_Java[4];
+                probTitle5.innerHTML = titleSet_Unreal[3];
+                catergory1.innerHTML = catergoriesMain[3];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[2];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //java, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Unity[0];
+                img2.src=imgSet_Unreal[1];
+                img3.src=imgSet_Unreal[2];
+                img4.src=imgSet_Java[4];
+                img5.src=imgSet_Unreal[3];
+                searchTitle.innerHTML = "Top Java, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Unity[0];
+                probTitle2.innerHTML = titleSet_Unreal[1];
+                probTitle3.innerHTML = titleSet_Unreal[2];
+                probTitle4.innerHTML = titleSet_Java[4];
+                probTitle5.innerHTML = titleSet_Unreal[3];
+                catergory1.innerHTML = catergoriesMain[4];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[2];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }
+            //python, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Unity[0];
+                img2.src=imgSet_Unreal[1];
+                img3.src=imgSet_Unreal[2];
+                img4.src=imgSet_Python[1];
+                img5.src=imgSet_Unreal[3];
+                searchTitle.innerHTML = "Top Python, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Unity[0];
+                probTitle2.innerHTML = titleSet_Unreal[1];
+                probTitle3.innerHTML = titleSet_Unreal[2];
+                probTitle4.innerHTML = titleSet_Python[1];
+                probTitle5.innerHTML = titleSet_Unreal[3];
+                catergory1.innerHTML = catergoriesMain[4];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false; 
+            }
+            //c#, c++, java, python
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[0];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Python[0];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top C#, C++, Java, and Python Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[0];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Python[0];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false; 
+            }
+            //c#, c++, java, unity
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[0];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Unity[0];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top C#, C++, Java, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[0];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Unity[0];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //c#, c++, java, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CSharp[1];
+                img2.src=imgSet_CPlusPlus[0];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Unreal[1];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top C#, C++, Java, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[1];
+                probTitle2.innerHTML = titleSet_CPlusPlus[0];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Unreal[1];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }   
+            //c++, java, python, unity
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CPlusPlus[1];
+                img2.src=imgSet_CPlusPlus[2];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Unity[1];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C++, Java, Python, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[1];
+                probTitle2.innerHTML = titleSet_CPlusPlus[2];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Unity[1];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }       
+            //c++, java, python, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CPlusPlus[1];
+                img2.src=imgSet_CPlusPlus[2];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Unreal[1];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C++, Java, Python, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[1];
+                probTitle2.innerHTML = titleSet_CPlusPlus[2];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Unreal[1];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }  
+            //java, python, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Unreal[1];
+                img2.src=imgSet_Unity[2];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Unreal[1];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top Java, Python, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Unreal[1];
+                probTitle2.innerHTML = titleSet_Unity[2];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Unreal[1];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[5];
+                catergory2.innerHTML = catergoriesMain[4];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }  
+            //C#, Java, Python, Unity
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_Java[2];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Unity[1];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C#, Java, Python, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_Java[2];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Unity[1];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[4];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }  
+            //c#, java, python, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_Java[2];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Unreal[1];
+                img5.src=imgSet_Python[1];
+                searchTitle.innerHTML = "Top C#, Java, Python, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_Java[2];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Unreal[1];
+                probTitle5.innerHTML = titleSet_Python[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[3];
+                return false;
+            }  
+            //c#, java, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_Java[2];
+                img3.src=imgSet_Java[0];
+                img4.src=imgSet_Unreal[1];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, Java, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_Java[2];
+                probTitle3.innerHTML = titleSet_Java[0];
+                probTitle4.innerHTML = titleSet_Unreal[1];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[2];
+                catergory3.innerHTML = catergoriesMain[2];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }  
+            //c#, python, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_Python[2];
+                img3.src=imgSet_Unity[0];
+                img4.src=imgSet_Unreal[1];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, Python, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_Python[2];
+                probTitle3.innerHTML = titleSet_Unity[0];
+                probTitle4.innerHTML = titleSet_Unreal[1];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[3];
+                catergory3.innerHTML = catergoriesMain[4];
+                catergory4.innerHTML = catergoriesMain[5];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }  
+            //c#, c++, python, unity
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[2];
+                img3.src=imgSet_Unity[0];
+                img4.src=imgSet_Python[1];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, C++, Python, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[2];
+                probTitle3.innerHTML = titleSet_Unity[0];
+                probTitle4.innerHTML = titleSet_Python[1];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[4];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }  
+            //c#, c++, python, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[2];
+                img3.src=imgSet_Unreal[0];
+                img4.src=imgSet_Python[1];
+                img5.src=imgSet_Unreal[1];
+                searchTitle.innerHTML = "Top C#, C++, Python, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[2];
+                probTitle3.innerHTML = titleSet_Unreal[0];
+                probTitle4.innerHTML = titleSet_Python[1];
+                probTitle5.innerHTML = titleSet_Unreal[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }  
+            //c#, c++, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CSharp[0];
+                img2.src=imgSet_CPlusPlus[2];
+                img3.src=imgSet_Unreal[0];
+                img4.src=imgSet_CPlusPlus[1];
+                img5.src=imgSet_Unreal[1];
+                searchTitle.innerHTML = "Top C#, C++, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CSharp[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[2];
+                probTitle3.innerHTML = titleSet_Unreal[0];
+                probTitle4.innerHTML = titleSet_CPlusPlus[1];
+                probTitle5.innerHTML = titleSet_Unreal[1];
+                catergory1.innerHTML = catergoriesMain[0];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[1];
+                catergory5.innerHTML = catergoriesMain[5];
+                return false;
+            }  
+            //c++, python, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Python[0];
+                img2.src=imgSet_CPlusPlus[2];
+                img3.src=imgSet_Unreal[0];
+                img4.src=imgSet_CPlusPlus[1];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, C++, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Python[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[2];
+                probTitle3.innerHTML = titleSet_Unreal[0];
+                probTitle4.innerHTML = titleSet_CPlusPlus[1];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[3];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[1];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }  
+            //c++, java, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_CPlusPlus[2];
+                img3.src=imgSet_Unreal[0];
+                img4.src=imgSet_CPlusPlus[1];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, C++, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[2];
+                probTitle3.innerHTML = titleSet_Unreal[0];
+                probTitle4.innerHTML = titleSet_CPlusPlus[1];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[5];
+                catergory4.innerHTML = catergoriesMain[1];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }  
+            //c#, c++, java, python, unity
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == false)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_CPlusPlus[2];
+                img3.src=imgSet_Python[0];
+                img4.src=imgSet_CSharp[1];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, C++, Java, Python, and Unity Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_CPlusPlus[2];
+                probTitle3.innerHTML = titleSet_Python[0];
+                probTitle4.innerHTML = titleSet_CSharp[1];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[1];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //c#, java, python, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == false) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_Java[0];
+                img2.src=imgSet_Unreal[2];
+                img3.src=imgSet_Python[0];
+                img4.src=imgSet_CSharp[1];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, Java, Python, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_Java[0];
+                probTitle2.innerHTML = titleSet_Unreal[2];
+                probTitle3.innerHTML = titleSet_Python[0];
+                probTitle4.innerHTML = titleSet_CSharp[1];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[2];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //c#, c++, python, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == false) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Unreal[2];
+                img3.src=imgSet_Python[0];
+                img4.src=imgSet_CSharp[1];
+                img5.src=imgSet_Unity[1];
+                searchTitle.innerHTML = "Top C#, C++, Python, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Unreal[2];
+                probTitle3.innerHTML = titleSet_Python[0];
+                probTitle4.innerHTML = titleSet_CSharp[1];
+                probTitle5.innerHTML = titleSet_Unity[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[4];
+                return false;
+            }
+            //c#, c++, java, python, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == false) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Unreal[2];
+                img3.src=imgSet_Python[0];
+                img4.src=imgSet_CSharp[1];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top C#, C++, Java, Python, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Unreal[2];
+                probTitle3.innerHTML = titleSet_Python[0];
+                probTitle4.innerHTML = titleSet_CSharp[1];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[3];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //c#, c++, java, Unity, unreal
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == false) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Unreal[2];
+                img3.src=imgSet_Unity[0];
+                img4.src=imgSet_CSharp[1];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top C#, C++, Java, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Unreal[2];
+                probTitle3.innerHTML = titleSet_Unity[0];
+                probTitle4.innerHTML = titleSet_CSharp[1];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[4];
+                catergory4.innerHTML = catergoriesMain[0];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //c++, java, python, unity, unreal
+            else if ((searchForm.cSharpCheck.checked == false) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src=imgSet_CPlusPlus[0];
+                img2.src=imgSet_Unreal[2];
+                img3.src=imgSet_Unity[0];
+                img4.src=imgSet_Python[1];
+                img5.src=imgSet_Java[1];
+                searchTitle.innerHTML = "Top C++, Java, Python, Unity, and Unreal Questions of the Day:";
+                probTitle1.innerHTML = titleSet_CPlusPlus[0];
+                probTitle2.innerHTML = titleSet_Unreal[2];
+                probTitle3.innerHTML = titleSet_Unity[0];
+                probTitle4.innerHTML = titleSet_Python[1];
+                probTitle5.innerHTML = titleSet_Java[1];
+                catergory1.innerHTML = catergoriesMain[1];
+                catergory2.innerHTML = catergoriesMain[5];
+                catergory3.innerHTML = catergoriesMain[4];
+                catergory4.innerHTML = catergoriesMain[3];
+                catergory5.innerHTML = catergoriesMain[2];
+                return false;
+            }
+            //all 6 selected
+            else if ((searchForm.cSharpCheck.checked == true) && (searchForm.cPlusPlusCheck.checked == true) && (searchForm.javaCheck.checked == true) && (searchForm.pythonCheck.checked == true) && (searchForm.unityCheck.checked == true) && (searchForm.unrealCheck.checked == true)){
+                img1.src="https://i.stack.imgur.com/mDnBH.png";
+                img2.src="https://pbs.twimg.com/media/C4MhbszUEAAW3LO.jpg";
+                img3.src="https://i.ytimg.com/vi/uZsNMoojEDQ/maxresdefault.jpg";
+                img4.src="https://answers.unrealengine.com/storage/temp/218036-unreal4-characterbp1.png";
+                img5.src="https://docs.microsoft.com/en-us/dotnet/core/tutorials/media/with-visual-studio/codewindow.png";
+                searchTitle.innerHTML = "All Top Questions of the Day:";
+                probTitle1.innerHTML = "How to Avoid a Stack Overflow";
+                probTitle2.innerHTML = "Testing Wrapper of a Third Party Library";
+                probTitle3.innerHTML = "Nested Json Imgur API";
+                probTitle4.innerHTML = "Adding C++ Script to Object Blueprints";
+                probTitle5.innerHTML = "Removing Transparency Using Imagemagick.NET";
+                catergory1.innerHTML = "C#";
+                catergory2.innerHTML = "Python";
+                catergory3.innerHTML = "C#";
+                catergory4.innerHTML = "Unreal";
+                catergory5.innerHTML = "C#";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+
+ 
+
+
+
+<!--
+IMAGES
+    C#
+        https://i.stack.imgur.com/mDnBH.png
+        https://www.dreamincode.net/forums/uploads/monthly_03_2011/post-0-13007232727918.png
+        https://i.ytimg.com/vi/uZsNMoojEDQ/maxresdefault.jpg
+        http://fedafi.com/images/csharp.jpg
+        https://docs.microsoft.com/en-us/dotnet/core/tutorials/media/with-visual-studio/codewindow.png
+    C++
+        https://cdn.lynda.com/course/162139/162139-636322790249127779-16x9.jpg
+        http://www.cplusplus.com/articles/L0pk4iN6/long_completion.png
+        https://raw.githubusercontent.com/ludwigpacifici/modern-cpp-font-lock/master/img/mc%2B%2Bfl-on.png
+        https://cdn2.macworld.co.uk/cmsdata/features/3636924/hello_world_netbeans.jpg
+        https://hackster.imgix.net/uploads/attachments/341053/screen_shot_2017-08-20_at_11_41_41_rhqs00i5ko.png?auto=compress&w=900&h=675&fit=min&fm=jpg
+    Java
+        https://cdn-images-1.medium.com/max/1600/1*oAshb_Imd_kGL8ma5kwexw.png
+        https://comps.canstockphoto.com/digital-java-code-text-computer-drawing_csp53903992.jpg
+        https://www.researchgate.net/profile/Md_Masudur_Rahman9/publication/317401664/figure/fig2/AS:504826271408129@1497371370743/Source-Code-Example-Customerjava-Partial.png
+        https://i.ytimg.com/vi/B_8_J2HLqIA/maxresdefault.jpg
+        http://blog.harisaltaf.com/wp-content/uploads/2011/12/java2.png
+    Python
+        https://cdn-images-1.medium.com/max/1600/1*2rvLWwFrmgahCoGSSPS_xA.png
+        https://pbs.twimg.com/media/C4MhbszUEAAW3LO.jpg
+        https://firstcode-codeninjas-v3.s3.amazonaws.com/sg/uploads/course_module/39/img_url/python.jpg
+        https://d3nmt5vlzunoa1.cloudfront.net/pycharm/files/2015/03/intentions3.png
+        https://code.visualstudio.com/assets/docs/python/tutorial/debug-configurations.png
+    Unity
+        https://blogs.unity3d.com/wp-content/uploads/2009/03/no_source_needed_path.png
+        https://blogs.unity3d.com/wp-content/uploads/2017/05/sg_2-1280x720.jpg
+        https://i1.wp.com/darkgenesis.zenithmoon.com/wp-content/uploads/2015/04/VSCodeFolder.png
+        https://cdn-images-1.medium.com/max/1600/1*r3ihnAstxkZnDFG6qNrtvg.png
+        https://www.codeproject.com/KB/game/1216876/GhostCubeUnity.png
+    Unreal
+        https://answers.unrealengine.com/storage/temp/57192-przechwytywanie.png
+        http://i62.tinypic.com/14jugsp.jpg
+        http://gamelab.mit.edu/wp/wp-content/uploads/2014/11/Blueprint.jpg
+        https://answers.unrealengine.com/storage/temp/218036-unreal4-characterbp1.png
+        http://forum.skookumscript.com/uploads/default/original/1X/f9b660b259b7ebdbc9d67229bce47ce42b94ef69.png
+    Settings
+        https://cdn1.iconfinder.com/data/icons/green-business/720/settings-512.png
+-->
+</body></html>

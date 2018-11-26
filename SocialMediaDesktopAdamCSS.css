@@ -1,0 +1,181 @@
+body{
+	background-color: #333;
+}
+
+h1, h2, h3{
+	color: #4CAF50;
+}
+
+h1{
+	font-size: 50px;
+}
+
+td{
+	color: #4CAF50;
+	text-align: center;
+}
+
+.settingButton{
+	height: 70px;
+	width: 100px;
+}
+
+.backButton{
+	height: 70px;
+	width: 100px;
+}
+
+#tableColAdj{
+	width: 180px;
+}
+
+/*magnifies the view of the component with the zoom tied to it*/
+.zoom{
+	border: none;
+	margin: 0 auto;
+	transition: all 0.23s;
+}
+
+.zoom:hover{
+	transform: scale(1.2);
+	transition: all 0.23s;
+}
+
+/*expands the object on load (magnifies like the zoom class above)
+NOT CURRENTLY IN USE (NOT WORKING)*/
+.expand{
+	border: none;
+	margin: 0 auto;
+	transition-delay: .1s;
+	transform: scale(1.2);
+	transition:  all 0.23s;
+	transition-delay: .1s;
+	transform: scale(1);
+	transition: all 0.23s;
+}
+
+img{
+	border-radius: 10%;
+	height: 120px;
+	width: 180px;
+	transition: all 0.23s;
+}
+
+img:hover{
+	transform: scale(1.5);
+	transition: all 0.23s;
+}
+
+/*Custom Table ID's (ID IS SHOWN IN HTML FOR SPECIFICS)*/
+table#t01{
+	border-spacing: 0px 12px;
+}
+
+input[type=text]{
+	border-radius: 8%;
+	width: 400px;
+	background-color: #4CAF50;
+	border: 2px solid #4CAF50;
+	padding: 12px 20px;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+}
+
+/*Stylizing the button layouts for the search button and the clear search button*/
+.searchButton {
+	background-color: #a6d8a8;
+	border: 4px solid #a6d8a8;
+	border-radius: 10%;
+	text-align: center;
+	font-size: 18px;
+	padding: 8px 22px;
+	color: #333;
+}
+
+.searchButton:hover{
+	background-color: #4CAF50;
+	border: 4px solid #4CAF50;
+	border-radius: 10%;
+	text-align: center;
+	font-size: 18px;
+	padding: 8px 22px;
+	color: white;
+}
+
+.clearButton {
+	background-color: #ccc;
+	border: 4px solid #ccc;
+	border-radius: 10%;
+	text-align: center;
+	font-size: 18px;
+	padding: 6px 20px;
+	color: #333;
+}
+
+.clearButton:hover{
+	background-color: #a6d8a8;
+	border: 4px solid #a6d8a8;
+	border-radius: 10%;
+	text-align: center;
+	font-size: 18px;
+	padding: 6px 20px;
+	color: #333;
+}
+
+/*CUSTOM CHECKBOXES*/
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	}
+  
+  /* The slider */
+  .slider {
+	border-radius: 10%;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: .1s;
+	}
+	
+	.slider:hover{
+		background-color: #a6d8a8;
+	}
+  
+  .slider:before {
+	border-radius: 10%;
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: .3s;
+  }
+  
+  input:checked + .slider {
+	background-color: #4CAF50;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #4CAF50;
+  }
+  
+  input:checked + .slider:before {
+	transform: translateX(26px);
+	}
